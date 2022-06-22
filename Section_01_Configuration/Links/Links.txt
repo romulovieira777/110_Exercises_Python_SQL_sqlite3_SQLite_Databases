@@ -1,0 +1,5 @@
+-- Google Colab
+https://colab.research.google.com/notebooks/intro.ipynb?hl=pt_BR
+
+-- GitHub
+https://github.com/
