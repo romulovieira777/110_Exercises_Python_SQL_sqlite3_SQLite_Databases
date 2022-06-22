@@ -3,6 +3,6 @@
 ### :boom: Topics covered during the course were :rocket:
 - [Section 01 - Configuration]()
 - [Section 02 - Tips]()
-- [Section 03 - Starter]()
+- [Section 03 - Starter](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_03_Starter)
 
 Link to the course: [Udemy](https://www.udemy.com/course/exercises-python-sql-sqlite3-sqlite-databases/)
