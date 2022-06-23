@@ -1,0 +1,8 @@
+A few words from the author
+This course consists mainly of exercises and is focused on practical learning.
+
+This is the moment when a novice programmer can test skills on real problems.
+
+I encourage you to do the exercises yourself. Make mistakes and fix them. Search technical documentation and forums. Use services such as Stack Overflow or GitHub. This is an integral part of the programmer's work. The ability to search for valuable information or solve complex problems is crucial. Critical thinking also. Fortunately, you can learn it.
+
+Good luck, have fun!
