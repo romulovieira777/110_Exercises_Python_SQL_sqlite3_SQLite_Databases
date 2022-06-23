@@ -1,0 +1,32 @@
+Intro
+Welcome to the Project - E-learning platform section!
+
+
+
+In this part, we will build a simple database that will support the e-learning platform. For the purposes of this exercise, let's name it "esmartdata". What are we going to need? What tables do we need to create? What kind of relationships to use?
+
+
+
+Ultimately, our database will consist of four tables:
+
+"esmartdata_instructor"
+
+"esmartdata_course"
+
+"esmartdata_learningpath"
+
+"esmartdata_learningpath_courses"
+
+
+
+The "esmartdata_instructor" table will store information about the instructors on the platform.
+
+The "esmartdata_course" table will store information about the courses on the platform. Each course will have an instructor. Instructors can have multiple courses on the platform. For this purpose, we will use a one-to-many relationship.
+
+
+
+The "esmartdata_learningpath" table will store information about learning paths. The learning path consists of several thematically related courses. One course may follow several learning paths. A learning path can have multiple courses. For this purpose, we will use the many-to-many relationship. The "esmartdata_learningpath_courses" table will be the bridge table to store data about the relationship between the tables "esmartdata_learningpath" and "esmartdata_course".
+
+
+
+Good luck!
