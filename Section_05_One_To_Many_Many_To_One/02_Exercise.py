@@ -26,5 +26,46 @@ type):
     - referral_link - text
     - instructor_id - integer
 
-Add a NOT NULL constraint to
+Add a NOT NULL constraint to each column. Also add a primary key constraint with the AUTOINCREMENT option to the id
+column.
+
+Add a foreign key constraint to the column instructor_id referring to the id column of the table 'esmartdata_instructor'
+with the ON DELETE CASCADE ON UPDATE CASCADE options.
+
+Commit the changes and close the database connection.
 """
+import sqlite3
+
+
+conn = sqlite3.connect('esmartdata.sqlite3')
+cur = conn.cursor()
+
+cur.executescript('''DROP TABLE IF EXISTS "esmartdata_instructor";
+CREATE TABLE IF NOT EXISTS "esmartdata_instructor" (
+    "id" INTEGER NOT NULL,
+    "first_name" TEXT NOT NULL,
+    "last_name" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+    PRIMARY KEY("id" AUTOINCREMENT)
+);''')
+
+cur.executescript('''DROP TABLE IF EXISTS "esmartdata_course";
+CREATE TABLE IF NOT EXISTS "esmartdata_course" (
+    "id" INTEGER NOT NULL,
+    "title" TEXT NULL,
+    "subtitle" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+    "category" TEXT NOT NULL,
+    "subcategory" TEXT NOT NULL,
+    "language" TEXT NOT NULL,
+    "length" TEXT NOT NULL,
+    "rating" REAL NOT NULL,
+    "referral_link" TEXT NOT NULL,
+    "instructor_id" INTEGER NULL,
+    PRIMARY KEY("id" AUTOINCREMENT),
+    FOREIGN KEY("instructor_id") REFERENCES "esmartdata_instructor"(id)
+    ON DELETE CASCADE ON UPDATE CASCADE
+);''')
+
+conn.commit()
+conn.close()
