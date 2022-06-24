@@ -67,5 +67,7 @@ CREATE TABLE IF NOT EXISTS "esmartdata_course" (
     ON DELETE CASCADE ON UPDATE CASCADE
 );''')
 
+print("Table created successfully!")
+
 conn.commit()
 conn.close()
