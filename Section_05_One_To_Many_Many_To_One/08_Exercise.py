@@ -1,16 +1,16 @@
 """
-Exercise No. 06
+Exercise No. 08
 
 Using the built-in sqlite3 package, SQLite database called 'esmartdata_sqlite3' was prepared, which contains the
 following tables:
     - 'esmartdata_instructor'
     - 'esmartdata_course'
 
-Create an index named 'esmartdata_course_instructor_id_idx' for the column instructor_id of the table
-'esmartdata_course'. Before creating index, use the appropriate SQL command that will remove the
-'esmartdata_course_instructor_id_idx' index if it already exists in the database.
+Create a query that extracts all unique subcategory names from the 'esmartdata_course' table(subcategory column). Print
+the names as a list sorted alphabetically to the console as shown below.
 
-Commit the changes and close the database connection.
+Expected Result:
+
 """
 import sqlite3
 
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS "esmartdata_course" (
 
 print("Table created successfully!")
 
-cur.execute('''INSERT INTO "esmartdata_instructor"
+cur.executescript('''INSERT INTO "esmartdata_instructor"
 (
     "id",
     "first_name",
@@ -60,10 +60,9 @@ VALUES
     "Pawel",
     "Krakowiak",
     "Data Scientist/Python Developer/Securities Broker"
-)
-''')
+);
 
-cur.execute('''INSERT INTO "esmartdata_instructor"
+INSERT INTO "esmartdata_instructor"
 (
     "id",
     "first_name",
@@ -94,4 +93,10 @@ cur.execute('''CREATE INDEX IF NOT EXISTS esmartdata_course_instructor_id_idx ON
 print('Index created successfully!')
 
 conn.commit()
+
+cur.execute('''SELECT DISTINCT(subcategory) FROM esmartdata_course''')
+
+subcategories = sorted([row[0] for row in cur.fetchall()])
+print(subcategories)
+
 conn.close()

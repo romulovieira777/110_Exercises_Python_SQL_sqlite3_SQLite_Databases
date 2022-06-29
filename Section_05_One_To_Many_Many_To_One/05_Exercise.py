@@ -1,5 +1,5 @@
 """
-Exercise No. 03
+Exercise No. 05
 
 Using the built-in sqlite3 package, SQLite database called 'esmartdata_sqlite3' was prepared, which contains the
 following tables:
