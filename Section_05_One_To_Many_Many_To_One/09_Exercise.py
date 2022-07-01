@@ -8,6 +8,10 @@ following tables:
 
 Create a query that will group from the 'esmartdata_course' by the instructor_id column and calculate the number of
 courses for each instructor. Print the result to the console as shown below(instructor_id, num_courses).
+
+Expected Result:
+    (1, 40)
+    (2, 5)
 """
 import sqlite3
 

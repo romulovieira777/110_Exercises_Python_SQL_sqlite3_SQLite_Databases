@@ -10,7 +10,7 @@ Create a query that extracts all unique subcategory names from the 'esmartdata_c
 the names as a list sorted alphabetically to the console as shown below.
 
 Expected Result:
-
+    ['data science', 'database design & development', 'programming languages', 'web development']
 """
 import sqlite3
 

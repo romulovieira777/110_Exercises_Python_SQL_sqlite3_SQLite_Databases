@@ -10,7 +10,51 @@ Create a query that extracts all courses names from the 'esmartdata_course' tabl
 console as shown below.
 
 Expected Result:
-
+Wprowadzenie do data science w języku Python - Pandas
+Deep Learning w języku Python - Konwolucyjne Sieci Neuronowe
+Uczenie Maszynowe - Drzewa Decyzyjne i Lasy Losowe - Python
+Programowanie w języku Python - od A do Z
+Twórz nowoczesne aplikacje webowe w Pythonie - Dash, Plotly
+Interaktywne wizualizacje danych w języku Python - Plotly
+Big Data, Hadoop oraz MapReduce w języku Python
+Wprowadzenie do sieci neuronowych - Tensorflow 2.0 + Keras
+Big Data: Analiza danych przy użyciu SQL oraz BigQuery
+Artificial Intelligence – Computer Vision w języku Python
+Data Science Bootcamp w języku Python - od A do Z
+Machine Learning Bootcamp w języku Python cz.I - od A do Z
+Machine Learning Bootcamp w języku Python cz.II - od A do Z
+200+ Ćwiczeń - Programowanie w języku Python - od A do Z
+250+ Ćwiczeń - Data Science Bootcamp w języku Python
+200+ Exercises - Programming in Python - from A to Z
+250+ Exercises - Data Science Bootcamp in Python
+100+ Exercises - Python Programming - Data Science - NumPy
+130+ Exercises - Python Programming - Data Science - Pandas
+100+ Exercises - Python - Data Science - scikit-learn
+Machine Learning Bootcamp w języku Python cz.III - Ćwiczenia
+210+ Ćwiczeń - Python - Moduły wbudowane - od A do Z
+210+ Exercises - Python Standard Libraries - from A to Z
+Programowanie obiektowe w języku Python - OOP - od A do Z
+150+ Ćwiczeń - Programowanie obiektowe w języku Python - OOP
+150+ Exercises - Object Oriented Programming in Python - OOP
+120+ Ćwiczeń w języku Python - Data Science - NumPy
+130+ Ćwiczeń w języku Python - Data Science - Pandas
+Testy jednostkowe w języku Python - framework unittest
+100+ Ćwiczeń - Testy jednostkowe w języku Python - unittest
+100+ Exercises - Unit tests in Python - unittest framework
+SQL Bootcamp - Bazy danych SQLite - Part I
+SQL Bootcamp - Bazy danych SQLite - Part II
+SQL Bootcamp - Bazy danych SQLite - Part III - Ćwiczenia
+SQL Bootcamp - Bazy danych SQLite - Part IV - Ćwiczenia
+SQL Bootcamp - Hands-On Exercises - SQLite - Part I
+SQL Bootcamp - Hands-On Exercises - SQLite - Part II
+100+ Ćwiczeń - Zaawansowane programowanie w języku Python
+100+ Exercises - Advanced Python Programming
+150+ Exercises - Data Structures in Python - Hands-On
+Programowanie w języku C - od A do Z
+150+ Ćwiczeń - Programowanie w języku C - od A do Z
+Programowanie w języku C++ - od A do Z
+150+ Ćwiczeń - Programowanie w języku C++ - od A do Z
+150+ Ćwiczeń - Programowanie obiektowe w języku C++ - OOP
 """
 import sqlite3
 
