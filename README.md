@@ -6,5 +6,6 @@
 - [Section 03 - Starter](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_03_Starter)
 - [Section 04 - Project - E-Learning Platform](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_04_Project_ELearning_Platform)
 - [Section 05 - One-To-Many / Many-To-One](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_05_One_To_Many_Many_To_One)
+- [Section 06 - Many-To-Many]()
 
 Link to the course: [Udemy](https://www.udemy.com/course/exercises-python-sql-sqlite3-sqlite-databases/)
