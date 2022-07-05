@@ -129,7 +129,6 @@ Expected Result:
 """
 import sqlite3
 
-
 conn = sqlite3.connect("esmartdata.sqlite3")
 cur = conn.cursor()
 
@@ -194,7 +193,7 @@ VALUES
 
 print('Data entered successfully!')
 
-with open('load_esmartdata_course.sql', 'r', encoding='utf-8') as file:
+with open('Querys/load_esmartdata_course.sql', 'r', encoding='utf-8') as file:
     sql = file.read()
 
 cur.executescript(sql)
@@ -228,19 +227,19 @@ CREATE TABLE IF NOT EXISTS "esmartdata_learningpath_courses" (
 
 print("Table created successfully!")
 
-with open('load_esmartdata_learningpath.sql', 'r', encoding='utf-8') as file:
+with open('Querys/load_esmartdata_learningpath.sql', 'r', encoding='utf-8') as file:
     sql = file.read()
 
 cur.executescript(sql)
 
-with open('load_esmartdata_learningpath_courses.sql', 'r', encoding='utf-8') as file:
+with open('Querys/load_esmartdata_learningpath_courses.sql', 'r', encoding='utf-8') as file:
     sql = file.read()
 
 cur.executescript(sql)
 
 print('Data successfully loaded!')
 
-cur.execute('''SELECT * FROM "esmartdata_learningpath_courses"''')
+cur.execute('''SELECT * FROM "esmartdata_learningpath_courses";''')
 
 for rows in cur.fetchall():
     print(rows)
