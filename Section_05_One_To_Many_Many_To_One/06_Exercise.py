@@ -14,7 +14,6 @@ Commit the changes and close the database connection.
 """
 import sqlite3
 
-
 conn = sqlite3.connect("esmartdata.sqlite3")
 cur = conn.cursor()
 
@@ -81,8 +80,7 @@ VALUES
 
 print('Data entered successfully!')
 
-
-with open('load_esmartdata_course.sql', 'r', encoding='utf-8') as file:
+with open('Querys\load_esmartdata_course.sql', 'r', encoding='utf-8') as file:
     sql = file.read()
 
 cur.executescript(sql)

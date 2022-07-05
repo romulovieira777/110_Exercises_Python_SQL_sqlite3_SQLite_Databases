@@ -20,11 +20,10 @@ Expected Result:
 """
 import sqlite3
 
-
 conn = sqlite3.connect("esmartdata.sqlite3")
 cur = conn.cursor()
 
-with open('create_database.sql', 'r', encoding='utf-8') as file:
+with open('Querys\create_database.sql', 'r', encoding='utf-8') as file:
     sql = file.read()
 
 cur.executescript(sql)

@@ -18,7 +18,6 @@ Commit the changes and close the database connection.
 """
 import sqlite3
 
-
 # Connecting...
 conn = sqlite3.connect('esmartdata.sqlite3')
 
