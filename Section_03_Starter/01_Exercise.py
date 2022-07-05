@@ -8,4 +8,5 @@ Expected Result:
 """
 import sys
 
+
 print(sys.version.split()[0])
