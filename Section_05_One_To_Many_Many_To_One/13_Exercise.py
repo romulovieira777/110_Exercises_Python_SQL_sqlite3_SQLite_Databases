@@ -32,6 +32,7 @@ Expected Result:
 """
 import sqlite3
 
+
 conn = sqlite3.connect("esmartdata.sqlite3")
 cur = conn.cursor()
 
@@ -122,7 +123,7 @@ LEFT JOIN
 ON
     course.instructor_id = instructor.id
 WHERE
-    course.title LIKE '%Python%' AND course.language = "eng"
+    course.title LIKE '%Python%' AND course.language = "eng";
 ''')
 
 for row in cur.fetchall():

@@ -92,7 +92,7 @@ with open('load_esmartdata_course.sql', 'r', encoding='utf8') as file:
 
 cur.executescript(sql)
 
-cur.execute('''SELECT COUNT(*) FROM esmartdata_course''')
+cur.execute('''SELECT COUNT(*) FROM esmartdata_course;''')
 n_rows = cur.fetchall()[0][0]
 print(n_rows)
 

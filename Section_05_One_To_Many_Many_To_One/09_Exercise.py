@@ -95,7 +95,7 @@ print('Index created successfully!')
 
 conn.commit()
 
-cur.execute('''SELECT instructor_id, COUNT(*) AS "num_courses" FROM esmartdata_course GROUP BY instructor_id''')
+cur.execute('''SELECT instructor_id, COUNT(*) AS "num_courses" FROM esmartdata_course GROUP BY instructor_id;''')
 
 for rows in cur.fetchall():
     print(rows)

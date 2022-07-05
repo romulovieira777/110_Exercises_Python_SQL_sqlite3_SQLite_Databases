@@ -138,7 +138,7 @@ print('Index created successfully!')
 
 conn.commit()
 
-cur.execute('''SELECT title FROM esmartdata_course''')
+cur.execute('''SELECT title FROM esmartdata_course;''')
 
 for rows in cur.fetchall():
     print(rows[0])

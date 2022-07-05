@@ -23,6 +23,7 @@ Expected Result:
 """
 import sqlite3
 
+
 conn = sqlite3.connect("esmartdata.sqlite3")
 cur = conn.cursor()
 
@@ -115,7 +116,7 @@ ON
 GROUP BY
     course.instructor_id
   , instructor.first_name
-  , instructor.last_name
+  , instructor.last_name;
 ''')
 
 for row in cur.fetchall():

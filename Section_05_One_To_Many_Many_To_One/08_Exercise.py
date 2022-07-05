@@ -94,7 +94,7 @@ print('Index created successfully!')
 
 conn.commit()
 
-cur.execute('''SELECT DISTINCT(subcategory) FROM esmartdata_course''')
+cur.execute('''SELECT DISTINCT(subcategory) FROM esmartdata_course;''')
 
 subcategories = sorted([row[0] for row in cur.fetchall()])
 print(subcategories)
