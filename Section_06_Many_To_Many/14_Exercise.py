@@ -55,7 +55,7 @@ GROUP BY
  , esmartdata_course.subcategory
  , instructor
 ORDER BY
-    num_courses DESC
+    num_courses DESC;
 ''')
 
 for row in cur.fetchall():
