@@ -37,6 +37,18 @@ CREATE TABLE IF NOT EXISTS "esmartdata_learningpath" (
   PRIMARY KEY("id" AUTOINCREMENT)
 );
 
+DROP TABLE IF EXISTS "esmartdata_membership";
+
+CREATE TABLE IF NOT EXISTS "esmartdata_membership" (
+  "id" integer NOT NULL,
+  "created" text NOT NULL,
+  "course_id" integer NOT NULL,
+  "learningpath_id" integer NOT NULL,
+  FOREIGN KEY("course_id") REFERENCES "esmartdata_course"("id"),
+  FOREIGN KEY("learningpath_id") REFERENCES "esmartdata_learningpath"("id"),
+  PRIMARY KEY("id" AUTOINCREMENT)
+);
+
 INSERT INTO "esmartdata_instructor" ("id","first_name","last_name","description") VALUES (1,'Paweł','Krakowiak','Data Scientist/Python Developer/Securities Broker');
 INSERT INTO "esmartdata_instructor" ("id","first_name","last_name","description") VALUES (2,'takeITeasy','Academy','Akademia Programowania');
 INSERT INTO "esmartdata_course" ("id","title","subtitle","category","subcategory","language","length","rating","referral_link","instructor_id") VALUES (1,'Wprowadzenie do data science w języku Python - Pandas','Zrób krok w stronę Pythona i analizuj dane jak profesjonalny data scientist!','development','programming languages','pl','12h 18min',4.78,'https://www.udemy.com/course/wprowadzenie-data-science/?referralCode=D85D646D30D785FD5277',1);
@@ -84,5 +96,20 @@ INSERT INTO "esmartdata_course" ("id","title","subtitle","category","subcategory
 INSERT INTO "esmartdata_course" ("id","title","subtitle","category","subcategory","language","length","rating","referral_link","instructor_id") VALUES (43,'Programowanie w języku C++ - od A do Z','Naucz się jednego z najpopularniejszych języków programowania i zacznij pisać praktyczne programy w języku C++','development','programming languages','pl','9h 4min',4.61,'https://www.udemy.com/course/programowanie-w-jezyku-cpp-od-a-do-z/?referralCode=DE2D6835B13468381D8A',2);
 INSERT INTO "esmartdata_course" ("id","title","subtitle","category","subcategory","language","length","rating","referral_link","instructor_id") VALUES (44,'150+ Ćwiczeń - Programowanie w języku C++ - od A do Z','Podnieś poziom swoich umiejętności programowania w języku C++ i rozwiąż ponad 150 zadań o różnym poziomie trudności!','development','programming languages','pl','0h 38min',4.56,'https://www.udemy.com/course/150-cwiczen-programowanie-w-jezyku-cpp/?referralCode=8DD53055EC487C303A46',2);
 INSERT INTO "esmartdata_course" ("id","title","subtitle","category","subcategory","language","length","rating","referral_link","instructor_id") VALUES (45,'150+ Ćwiczeń - Programowanie obiektowe w języku C++ - OOP','Podnieś poziom swoich umiejętności o programowanie obiektowe w języku C++ i rozwiąż ponad 150 ćwiczeń na różnym poziomie','development','programming languages','pl','0h 30min',5.0,'https://www.udemy.com/course/150-cwiczen-programowanie-obiektowe-w-jezyku-cpp-oop/?referralCode=B516ED45D6F0EA7A9E94',2);
+INSERT INTO "esmartdata_learningpath" ("id","title","subtitle","url") VALUES (2,'Ścieżka C Developer','Naucz się jednego z najpopularniejszych języków programowania i otwórz drzwi do kariery w IT!','https://e-smartdata.teachable.com/p/sciezka-c-developer');
+INSERT INTO "esmartdata_learningpath" ("id","title","subtitle","url") VALUES (3,'Ścieżka C++ Developer','Naucz się jednego z najpopularniejszych języków programowania i otwórz drzwi do kariery w IT!','https://e-smartdata.teachable.com/p/sciezka-cpp-developer');
+INSERT INTO "esmartdata_learningpath" ("id","title","subtitle","url") VALUES (4,'Ścieżka Python Developer','Naucz się jednego z najpopularniejszych języków programowania i otwórz drzwi do kariery w IT!','https://e-smartdata.teachable.com/p/sciezka-python-developer');
+INSERT INTO "esmartdata_membership" ("id","created","course_id","learningpath_id") VALUES (2,'2021-02-03',41,2);
+INSERT INTO "esmartdata_membership" ("id","created","course_id","learningpath_id") VALUES (3,'2021-02-17',42,2);
+INSERT INTO "esmartdata_membership" ("id","created","course_id","learningpath_id") VALUES (4,'2021-03-15',43,3);
+INSERT INTO "esmartdata_membership" ("id","created","course_id","learningpath_id") VALUES (5,'2021-03-22',44,3);
+INSERT INTO "esmartdata_membership" ("id","created","course_id","learningpath_id") VALUES (6,'2021-05-12',45,3);
+INSERT INTO "esmartdata_membership" ("id","created","course_id","learningpath_id") VALUES (7,'2021-01-05',4,4);
+INSERT INTO "esmartdata_membership" ("id","created","course_id","learningpath_id") VALUES (8,'2021-01-26',14,4);
+INSERT INTO "esmartdata_membership" ("id","created","course_id","learningpath_id") VALUES (9,'2021-02-05',22,4);
+INSERT INTO "esmartdata_membership" ("id","created","course_id","learningpath_id") VALUES (10,'2021-03-08',24,4);
+INSERT INTO "esmartdata_membership" ("id","created","course_id","learningpath_id") VALUES (11,'2021-03-30',25,4);
+INSERT INTO "esmartdata_membership" ("id","created","course_id","learningpath_id") VALUES (12,'2021-05-11',38,4);
+INSERT INTO "esmartdata_membership" ("id","created","course_id","learningpath_id") VALUES (13,'2021-04-13',29,4);
 
 COMMIT;
