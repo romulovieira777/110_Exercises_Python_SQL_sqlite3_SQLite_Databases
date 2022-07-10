@@ -1,0 +1,31 @@
+Intro
+
+Welcome to the Mini Projekt - Company section!
+
+
+In this part, we will create a simple database that will support a small software house. For the sake of exercise,
+let's call it "esmartdata". What are we going to need? What tables do we need to create? What kind of relationships
+to use?
+
+
+Ultimately, our database will consist of four tables:
+    - "esmartdata_user"
+    - "esmartdata_developer"
+    - "esmartdata_tech"
+    - "esmartdata_developer_techs"
+
+
+The table "esmartdata_user" will store information about the users of the software house. The "esmartdata_developer"
+table will be an extension of the "esmartdata_user" table and will store additional information for software developers.
+We will store all common information (first name, last name, etc.) for developers and users in the "esmartdata_user"
+table. We will store developer specific information (experience, known technologies) in the "esmartdata_developer"
+table. For this purpose, we will use a one-to-one relationship between these tables.
+
+
+The table "esmartdata_tech" will store the names of the technologies that are used in the software house. One developer
+may know many technologies. One technology may be known by multiple developers. For this purpose, we will use the
+many-to-many relationship. The "esmartdata_developer_techs" table will be the bridge table to store the relationship
+data between the "esmartdata_developer" and "esmartdata_tech" tables.
+
+
+Good luck!
