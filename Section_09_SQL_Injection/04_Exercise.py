@@ -1,5 +1,5 @@
 """
-Exercise No. 01
+Exercise No. 04
 
 Using the built-in sqlite3 package, SQLite database called 'esmartdata_sqlite3' was prepared, which contains the
 following tables:
@@ -10,17 +10,15 @@ following tables:
 
 All operations performed so far on this database can be found in the file create_database.sql.
 
-When working with database, we will often want to use  the values of variables in our queries. This exercise will show
-you how not to do it.
-
-The table 'esmartdata_instructor' contains two records. Using the appropriate command, display all data for the
-instructor with the following instructor_id:
+The table 'esmartdata_instructor' contains two records. We have the following instructor_id variable:
     instructor_id = 2
 
-In this exercise, use f-string text formatting to insert the value of instructor_id into the query.
+Transform the following query:
+    '''SELECT * FROM esmartdata_instructor WHERE id = {instructor_id}'''
 
-CAUTION! Remember that this is not a secure solution. We only do this to show why it's vulnerable(in the next exercise).
-When writing your own code, remember not to be exposed to SQL injection attacks.
+so that it is not exposed to SQL injection attacks. Use question marks(qmark style) placeholders in the solution.
+
+In response, execute this query and print result to the console as shown below.
 
 Expected Result:
     (2, 'takeITeasy', 'Academy', 'Akademia Programowania')
@@ -36,10 +34,9 @@ cur.executescript(sql)
 
 instructor_id = 2
 
-cur.execute(f"SELECT * FROM esmartdata_instructor WHERE id = {instructor_id}")
+cur.execute('SELECT * FROM esmartdata_instructor WHERE id = :instructor_id', {'instructor_id': instructor_id},)
 
 for row in cur.fetchall():
     print(row)
 
-conn.commit()
 conn.close()
