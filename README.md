@@ -9,6 +9,6 @@
 - [Section 06 - Many-To-Many](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_06_Many_To_Many)
 - [Section 07 - Many-To-Many + Additional Columns](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_07_Many_To_Many_Additional_Columns)
 - [Section 08 - DML - Data Manipulation Language](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_08_DML_Data_Manipulation_Language)
-- [Section 09 - SQL Injection]()
+- [Section 09 - SQL Injection](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_09_SQL_Injection)
 
 Link to the course: [Udemy](https://www.udemy.com/course/exercises-python-sql-sqlite3-sqlite-databases/)
