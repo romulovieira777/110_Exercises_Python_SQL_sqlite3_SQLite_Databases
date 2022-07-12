@@ -12,5 +12,6 @@
 - [Section 09 - SQL Injection](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_09_SQL_Injection)
 - [Section 10 - Mini Projekt - Company](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_10_Mini_Projekt_Company)
 - [Section 11 - One-To-One](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_11_OneToOne)
+- [Section 12 - Many-To-Many](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_12_Many_To_Many)
 
 Link to the course: [Udemy](https://www.udemy.com/course/exercises-python-sql-sqlite3-sqlite-databases/)
