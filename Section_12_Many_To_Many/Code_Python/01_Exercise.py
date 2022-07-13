@@ -31,7 +31,7 @@ Commit the changes and close the database connection.
 """
 import sqlite3
 
-conn = sqlite3.connect("company.db")
+conn = sqlite3.connect("../company.db")
 cur = conn.cursor()
 
 cur.executescript('''DROP TABLE IF EXISTS "esmartdata_user";

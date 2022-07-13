@@ -30,10 +30,10 @@ Expected Result:
 """
 import sqlite3
 
-conn = sqlite3.connect("company.db")
+conn = sqlite3.connect("../company.db")
 cur = conn.cursor()
 
-with open("Querys\load_database.sql", "r", encoding='utf-8') as file:
+with open("../Query/load_database.sql", "r", encoding='utf-8') as file:
     sql = file.read()
 cur.executescript(sql)
 
