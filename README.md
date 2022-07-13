@@ -11,7 +11,7 @@
 - [Section 08 - DML - Data Manipulation Language](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_08_DML_Data_Manipulation_Language)
 - [Section 09 - SQL Injection](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_09_SQL_Injection)
 - [Section 10 - Mini Projekt - Company](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_10_Mini_Projekt_Company)
-- [Section 11 - One-To-One](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_11_OneToOne)
+- [Section 11 - One-To-One](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_11_One_To_One)
 - [Section 12 - Many-To-Many](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_12_Many_To_Many)
 - [Section 13 - Project - Forum Application](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_13_Project_Forum_Application)
 - [Section 14 - Forum Application]()
