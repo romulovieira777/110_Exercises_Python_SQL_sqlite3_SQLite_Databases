@@ -23,10 +23,10 @@ Use the SELECT CASE statement in your solution. In response, print the result to
 """
 import sqlite3
 
-conn = sqlite3.connect("esmartdata.sqlite3")
+conn = sqlite3.connect("../esmartdata.sqlite3")
 cur = conn.cursor()
 
-with open("Querys\create_database.sql", "r", encoding='utf-8') as file:
+with open("../Query/create_database.sql", "r", encoding='utf-8') as file:
     sql = file.read()
 cur.executescript(sql)
 

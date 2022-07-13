@@ -9,10 +9,10 @@ Due to Polish characters, use the 'utf-8' encoding when opening the script(encod
 """
 import sqlite3
 
-conn = sqlite3.connect("esmartdata.sqlite3")
+conn = sqlite3.connect("../esmartdata.sqlite3")
 cur = conn.cursor()
 
-with open("Querys\create_database.sql", encoding="utf-8") as file:
+with open("../Query/create_database.sql", encoding="utf-8") as file:
     sql = file.read()
     # cur.executescript(file.read())
 
