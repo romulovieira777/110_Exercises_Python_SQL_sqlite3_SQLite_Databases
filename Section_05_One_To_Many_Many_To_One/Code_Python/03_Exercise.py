@@ -1,23 +1,20 @@
 """
-Exercise No. 04
+Exercise No. 03
 
 Using the built-in sqlite3 package, SQLite database called 'esmartdata_sqlite3' was prepared, which contains the
 following tables:
     - 'esmartdata_instructor'
     - 'esmartdata_course'
 
-Create a query that will extract all records from the 'esmartdata_instructor' table and print to the console as show
-below.
-
-Expected Result:
-    - (1, 'Pawel', 'Krakowiak', 'Data Scientist/Python Developer/Securities Broker')
-    - (2, 'takeITeasy, 'Academy', 'Akademia Programowania')
+Insert into the 'esmartdata_instructor' table two records with the following data:
+    - 1, 'Pawel', 'Krakowiak', 'Data Scientist/Python Developer/Securities Broker'
+    - 2, 'takeITeasy, 'Academy', 'Akademia Programowania'
 
 Commit the changes and close the database connection.
 """
 import sqlite3
 
-conn = sqlite3.connect("esmartdata.sqlite3")
+conn = sqlite3.connect("../esmartdata.sqlite3")
 cur = conn.cursor()
 
 cur.executescript('''DROP TABLE IF EXISTS "esmartdata_instructor";
@@ -84,10 +81,4 @@ VALUES
 print('Data entered successfully!')
 
 conn.commit()
-
-cur.execute('''SELECT * FROM esmartdata_instructor;''')
-
-for rows in cur.fetchall():
-    print(rows)
-
 conn.close()

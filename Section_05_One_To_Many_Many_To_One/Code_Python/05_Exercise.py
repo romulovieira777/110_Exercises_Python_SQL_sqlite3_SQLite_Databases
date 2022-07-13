@@ -1,20 +1,25 @@
 """
-Exercise No. 06
+Exercise No. 05
 
 Using the built-in sqlite3 package, SQLite database called 'esmartdata_sqlite3' was prepared, which contains the
 following tables:
     - 'esmartdata_instructor'
     - 'esmartdata_course'
 
-Create an index named 'esmartdata_course_instructor_id_idx' for the column instructor_id of the table
-'esmartdata_course'. Before creating index, use the appropriate SQL command that will remove the
-'esmartdata_course_instructor_id_idx' index if it already exists in the database.
+Using the script load_esmartdata_course.sql attached to the exercise, load the data about the courses into the
+'esmartdata_course' table.
 
-Commit the changes and close the database connection.
+Due to Polish characters, use the 'utf-8' encoding when opening the script(encoding argument of the open() function).
+
+In response, create a query that returns the number of records in the 'esmartdata_course' table and print it to the
+console.
+
+Expected Result:
+    - 45
 """
 import sqlite3
 
-conn = sqlite3.connect("esmartdata.sqlite3")
+conn = sqlite3.connect("../esmartdata.sqlite3")
 cur = conn.cursor()
 
 cur.executescript('''DROP TABLE IF EXISTS "esmartdata_instructor";
@@ -68,7 +73,7 @@ cur.execute('''INSERT INTO "esmartdata_instructor"
     "first_name",
     "last_name",
     "description"
-)
+) 
 VALUES
 (
     2,
@@ -80,16 +85,14 @@ VALUES
 
 print('Data entered successfully!')
 
-with open('Querys\load_esmartdata_course.sql', 'r', encoding='utf-8') as file:
+with open('../Query/load_esmartdata_course.sql', 'r', encoding='utf8') as file:
     sql = file.read()
 
 cur.executescript(sql)
 
-cur.execute('''DROP INDEX IF EXISTS esmartdata_course_instructor_id_idx;''')
-cur.execute('''CREATE INDEX IF NOT EXISTS esmartdata_course_instructor_id_idx ON esmartdata_course('instructor_id');
-''')
-
-print('Index created successfully!')
+cur.execute('''SELECT COUNT(*) FROM esmartdata_course;''')
+n_rows = cur.fetchall()[0][0]
+print(n_rows)
 
 conn.commit()
 conn.close()

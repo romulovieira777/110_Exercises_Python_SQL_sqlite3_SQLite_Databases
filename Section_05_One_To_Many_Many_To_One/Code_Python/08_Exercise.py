@@ -1,29 +1,20 @@
 """
-Exercise No. 10
+Exercise No. 08
 
 Using the built-in sqlite3 package, SQLite database called 'esmartdata_sqlite3' was prepared, which contains the
 following tables:
     - 'esmartdata_instructor'
     - 'esmartdata_course'
 
-Create a query that will join the 'esmartdata_course' and 'esmartdata_instructor' tables(LEFT JOIN), group the data by
-the instructor_id column of the 'esmartdata_course' table and count the number of courses for each instructor.
-
-Display four columns in the output table:
-    - instructor_id('esmartdata_course' table)
-    - first_name('esmartdata_instructor' table)
-    - last_name('esmartdata_instructor' table)
-    - num_courses(the calculated number of courses)
-
-In response, print the result to the console as shown below.
+Create a query that extracts all unique subcategory names from the 'esmartdata_course' table(subcategory column). Print
+the names as a list sorted alphabetically to the console as shown below.
 
 Expected Result:
-    (1, 'Pawel', 'Krakowiak', 40)
-    (2, 'takeITeasy', 'Academy', 5)
+    ['data science', 'database design & development', 'programming languages', 'web development']
 """
 import sqlite3
 
-conn = sqlite3.connect("esmartdata.sqlite3")
+conn = sqlite3.connect("../esmartdata.sqlite3")
 cur = conn.cursor()
 
 cur.executescript('''DROP TABLE IF EXISTS "esmartdata_instructor";
@@ -88,7 +79,7 @@ VALUES
 
 print('Data entered successfully!')
 
-with open('Querys\load_esmartdata_course.sql', 'r', encoding='utf-8') as file:
+with open('../Query/load_esmartdata_course.sql', 'r', encoding='utf-8') as file:
     sql = file.read()
 
 cur.executescript(sql)
@@ -101,24 +92,9 @@ print('Index created successfully!')
 
 conn.commit()
 
-cur.execute('''SELECT
-    course.instructor_id
-  , instructor.first_name
-  , instructor.last_name
-  , COUNT(course.subcategory) AS courses
-FROM
-    esmartdata_course course
-LEFT JOIN
-    esmartdata_instructor instructor
-ON
-    course.instructor_id = instructor.id
-GROUP BY
-    course.instructor_id
-  , instructor.first_name
-  , instructor.last_name;
-''')
+cur.execute('''SELECT DISTINCT(subcategory) FROM esmartdata_course;''')
 
-for row in cur.fetchall():
-    print(row)
+subcategories = sorted([row[0] for row in cur.fetchall()])
+print(subcategories)
 
 conn.close()

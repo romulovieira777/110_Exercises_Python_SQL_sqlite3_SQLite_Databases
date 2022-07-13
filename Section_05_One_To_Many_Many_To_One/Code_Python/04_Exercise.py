@@ -1,20 +1,23 @@
 """
-Exercise No. 08
+Exercise No. 04
 
 Using the built-in sqlite3 package, SQLite database called 'esmartdata_sqlite3' was prepared, which contains the
 following tables:
     - 'esmartdata_instructor'
     - 'esmartdata_course'
 
-Create a query that extracts all unique subcategory names from the 'esmartdata_course' table(subcategory column). Print
-the names as a list sorted alphabetically to the console as shown below.
+Create a query that will extract all records from the 'esmartdata_instructor' table and print to the console as show
+below.
 
 Expected Result:
-    ['data science', 'database design & development', 'programming languages', 'web development']
+    - (1, 'Pawel', 'Krakowiak', 'Data Scientist/Python Developer/Securities Broker')
+    - (2, 'takeITeasy, 'Academy', 'Akademia Programowania')
+
+Commit the changes and close the database connection.
 """
 import sqlite3
 
-conn = sqlite3.connect("esmartdata.sqlite3")
+conn = sqlite3.connect("../esmartdata.sqlite3")
 cur = conn.cursor()
 
 cur.executescript('''DROP TABLE IF EXISTS "esmartdata_instructor";
@@ -46,7 +49,7 @@ CREATE TABLE IF NOT EXISTS "esmartdata_course" (
 
 print("Table created successfully!")
 
-cur.executescript('''INSERT INTO "esmartdata_instructor"
+cur.execute('''INSERT INTO "esmartdata_instructor"
 (
     "id",
     "first_name",
@@ -59,15 +62,16 @@ VALUES
     "Pawel",
     "Krakowiak",
     "Data Scientist/Python Developer/Securities Broker"
-);
+)
+''')
 
-INSERT INTO "esmartdata_instructor"
+cur.execute('''INSERT INTO "esmartdata_instructor"
 (
     "id",
     "first_name",
     "last_name",
     "description"
-)
+) 
 VALUES
 (
     2,
@@ -79,22 +83,11 @@ VALUES
 
 print('Data entered successfully!')
 
-with open('Querys\load_esmartdata_course.sql', 'r', encoding='utf-8') as file:
-    sql = file.read()
-
-cur.executescript(sql)
-
-cur.execute('''DROP INDEX IF EXISTS esmartdata_course_instructor_id_idx;''')
-cur.execute('''CREATE INDEX IF NOT EXISTS esmartdata_course_instructor_id_idx ON esmartdata_course('instructor_id');
-''')
-
-print('Index created successfully!')
-
 conn.commit()
 
-cur.execute('''SELECT DISTINCT(subcategory) FROM esmartdata_course;''')
+cur.execute('''SELECT * FROM esmartdata_instructor;''')
 
-subcategories = sorted([row[0] for row in cur.fetchall()])
-print(subcategories)
+for rows in cur.fetchall():
+    print(rows)
 
 conn.close()

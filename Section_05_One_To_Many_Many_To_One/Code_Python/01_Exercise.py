@@ -19,7 +19,7 @@ Commit the changes and close the database connection.
 import sqlite3
 
 # Connecting...
-conn = sqlite3.connect('esmartdata.sqlite3')
+conn = sqlite3.connect('../esmartdata.sqlite3')
 
 # Defining a cursor
 cursor = conn.cursor()

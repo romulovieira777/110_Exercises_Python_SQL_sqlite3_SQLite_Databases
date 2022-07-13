@@ -1,30 +1,38 @@
 """
-Exercise No. 11
+Exercise No. 13
 
 Using the built-in sqlite3 package, SQLite database called 'esmartdata_sqlite3' was prepared, which contains the
 following tables:
     - 'esmartdata_instructor'
     - 'esmartdata_course'
 
-Create a query that will join the 'esmartdata_course' and 'esmartdata_instructor'(LEFT JOIN), group the data by the
-instructor_id column of the 'esmartdata_course' table and calculate the average rating rounded to two places for each
-instructor(the rating column).
+Create a query that will join from the tables 'esmartdata_course' and 'esmartdara_instructor'(LEFT JOIN) and retrieve
+all records that contain in the course name(title column) "Python" and the language of the course(language column) is
+set to "eng".
 
 Display four columns in the output table:
-    - instructor_id('esmartdata_course' table)
     - first_name('esmartdata_instructor' table)
     - last_name('esmartdata_instructor' table)
-    - avg_rating(average rating)
+    - title('esmartdata_course' table)
+    - subcategory('esmartdata_course' table)
 
 In response, print the result to the console as shown below.
 
 Expected Result:
-    (1, 'Pawel', 'Krakowiak', 4.63)
-    (2, 'takeITeasy', 'Academy', 4.53)
+    ('Pawel', 'Krakowiak', '200+ Exercises - Programming in Python - from A to Z', 'programming languages')
+    ('Pawel', 'Krakowiak', '250+ Exercises - Data Science Bootcamp in Python', 'data science')
+    ('Pawel', 'Krakowiak', '100+ Exercises - Python Programming - Data Science - NumPy', 'data science')
+    ('Pawel', 'Krakowiak', '130+ Exercises - Python Programming - Data Science - Pandas', 'data science')
+    ('Pawel', 'Krakowiak', '100+ Exercises - Python - Data Science - scikit-learn', 'data science')
+    ('Pawel', 'Krakowiak', '210+ Exercises - Python Standard Libraries - from A to Z', 'programming languages')
+    ('Pawel', 'Krakowiak', '150+ Exercises - Object Oriented Programming in Python - OOP', 'programming languages')
+    ('Pawel', 'Krakowiak', '100+ Exercises - Unit tests in Python - unittest framework', 'programming languages')
+    ('Pawel', 'Krakowiak', '100+ Exercises - Advanced Python Programming', 'programming languages')
+    ('Pawel', 'Krakowiak', '150+ Exercises - Data Structures in Python - Hands-On', 'programming languages')
 """
 import sqlite3
 
-conn = sqlite3.connect("esmartdata.sqlite3")
+conn = sqlite3.connect("../esmartdata.sqlite3")
 cur = conn.cursor()
 
 cur.executescript('''DROP TABLE IF EXISTS "esmartdata_instructor";
@@ -89,7 +97,7 @@ VALUES
 
 print('Data entered successfully!')
 
-with open('Querys\load_esmartdata_course.sql', 'r', encoding='utf-8') as file:
+with open('../Query/load_esmartdata_course.sql', 'r', encoding='utf-8') as file:
     sql = file.read()
 
 cur.executescript(sql)
@@ -103,20 +111,18 @@ print('Index created successfully!')
 conn.commit()
 
 cur.execute('''SELECT
-    course.instructor_id
-  , instructor.first_name
+    instructor.first_name
   , instructor.last_name
-  , ROUND(AVG(course.rating), 2) AS "AVG_Rating"
+  , course.title
+  , course.subcategory
 FROM
     esmartdata_course course
 LEFT JOIN
     esmartdata_instructor instructor
 ON
     course.instructor_id = instructor.id
-GROUP BY
-    course.instructor_id
-  , instructor.first_name
-  , instructor.last_name;
+WHERE
+    course.title LIKE '%Python%' AND course.language = "eng";
 ''')
 
 for row in cur.fetchall():

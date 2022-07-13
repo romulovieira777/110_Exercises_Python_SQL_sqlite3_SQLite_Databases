@@ -1,40 +1,29 @@
 """
-Exercise No. 12
+Exercise No. 10
 
 Using the built-in sqlite3 package, SQLite database called 'esmartdata_sqlite3' was prepared, which contains the
 following tables:
-    - esmartdata_instructor
-    - esmartdata_course
+    - 'esmartdata_instructor'
+    - 'esmartdata_course'
 
-Create a query that will join the tables "esmartdata_course" and "esmartdata_instructor"(LEFT JOIN) and retrieve all
-records that contain the string "Exer" in the course name(title column).
+Create a query that will join the 'esmartdata_course' and 'esmartdata_instructor' tables(LEFT JOIN), group the data by
+the instructor_id column of the 'esmartdata_course' table and count the number of courses for each instructor.
 
 Display four columns in the output table:
-    - first_name("esmartdata_instructor" table)
-    - last_name("esmartdata_instructor" table)
-    - title("esmartdata_course" table)
-    - subcategory("esmartdata_course" table)
+    - instructor_id('esmartdata_course' table)
+    - first_name('esmartdata_instructor' table)
+    - last_name('esmartdata_instructor' table)
+    - num_courses(the calculated number of courses)
 
 In response, print the result to the console as shown below.
 
 Expected Result:
-    ('Pawel', 'Krakowiak', '200+ Exercises - Programming in Python - from A to Z', 'programming languages')
-    ('Pawel', 'Krakowiak', '250+ Exercises - Data Science Bootcamp in Python', 'data science')
-    ('Pawel', 'Krakowiak', '100+ Exercises - Python Programming - Data Science - NumPy', 'data science')
-    ('Pawel', 'Krakowiak', '130+ Exercises - Python Programming - Data Science - Pandas', 'data science')
-    ('Pawel', 'Krakowiak', '100+ Exercises - Python - Data Science - scikit-learn', 'data science')
-    ('Pawel', 'Krakowiak', '210+ Exercises - Python Standard Libraries - from A to Z', 'programming languages')
-    ('Pawel', 'Krakowiak', '150+ Exercises - Object Oriented Programming in Python - OOP', 'programming languages')
-    ('Pawel', 'Krakowiak', '100+ Exercises - Unit tests in Python - unittest framework', 'programming languages')
-    ('Pawel', 'Krakowiak', 'SQL Bootcamp - Hands-On Exercises - SQLite - Part I', 'database design & development')
-    ('Pawel', 'Krakowiak', 'SQL Bootcamp - Hands-On Exercises - SQLite - Part II', 'database design & development')
-    ('Pawel', 'Krakowiak', '100+ Exercises - Advanced Python Programming', 'programming languages')
-    ('Pawel', 'Krakowiak', '150+ Exercises - Data Structures in Python - Hands-On', 'programming languages')
-
+    (1, 'Pawel', 'Krakowiak', 40)
+    (2, 'takeITeasy', 'Academy', 5)
 """
 import sqlite3
 
-conn = sqlite3.connect("esmartdata.sqlite3")
+conn = sqlite3.connect("../esmartdata.sqlite3")
 cur = conn.cursor()
 
 cur.executescript('''DROP TABLE IF EXISTS "esmartdata_instructor";
@@ -99,7 +88,7 @@ VALUES
 
 print('Data entered successfully!')
 
-with open('Querys\load_esmartdata_course.sql', 'r', encoding='utf-8') as file:
+with open('../Query/load_esmartdata_course.sql', 'r', encoding='utf-8') as file:
     sql = file.read()
 
 cur.executescript(sql)
@@ -113,18 +102,20 @@ print('Index created successfully!')
 conn.commit()
 
 cur.execute('''SELECT
-    instructor.first_name
+    course.instructor_id
+  , instructor.first_name
   , instructor.last_name
-  , course.title
-  , course.subcategory
+  , COUNT(course.subcategory) AS courses
 FROM
     esmartdata_course course
 LEFT JOIN
     esmartdata_instructor instructor
 ON
     course.instructor_id = instructor.id
-WHERE
-    course.title LIKE '%Exer%';
+GROUP BY
+    course.instructor_id
+  , instructor.first_name
+  , instructor.last_name;
 ''')
 
 for row in cur.fetchall():
