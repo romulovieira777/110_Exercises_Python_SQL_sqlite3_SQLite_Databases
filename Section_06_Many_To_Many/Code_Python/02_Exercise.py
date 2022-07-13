@@ -1,37 +1,32 @@
 """
-Exercise No. 03
+Exercise No. 02
 
 Using the built-in sqlite3 package, SQLite database called 'esmartdata_sqlite3' was prepared, which contains the
 following tables:
     - 'esmartdata_instructor'
     - 'esmartdata_course'
     - 'esmartdata_learningpath'
-    - 'esmartdata_learningpath_courses'
 
-Using the script load_esmardata_learningpath.sql attached to the exercise, load the data about the learning paths into
-"esmartdata_learningpath" table.
+In our database create a table named "esmartdata_learningpath_courses" with the following columns(column name -
+data type):
+    - id integer
+    - learningpath_id integer
+    - course_id integer
 
-Due to Polish characters, use the 'utf-8' encoding when opening the script(encoding argument of the open() function).
+Add a NOT NULL constraint to each column. Also add a primary key constraint with the AUTOINCREMENT option to the id
+column.
 
-In response, create a query that will display the following columns from the "esmartdata_learningpath" table:
-    - id
-    - title
-    - url
-and print them to the console as shown below.
+To the learningpath_id column, add a FOREIGN KEY constraint referring to the id column of the "esmartdata_learningpath"
+table with ON DELETE CASCADE ON UPDATE CASCADE options.
 
-Expected Result:
-    (1, 'Ścieżka C Developer', 'https://e-smartdata.teachable.com/p/sciezka-c-developer')
-    (2, 'Ścieżka C++ Developer', 'https://e-smartdata.teachable.com/p/sciezka-cpp-developer')
-    (3, 'Ścieżka Python Developer', 'https://e-smartdata.teachable.com/p/sciezka-python-developer')
-    (4, 'Ścieżka Big Data Analyst', 'https://e-smartdata.teachable.com/p/sciezka-big-data-analyst')
-    (5, 'Ścieżka BI Analyst / Data Analyst', 'https://e-smartdata.teachable.com/p/sciezka-bi-analyst-data-analyst')
-    (6, 'Ścieżka Data Scientist / Machine Learning Engineer', 'https://e-smartdata.teachable.com/p/sciezka-data-scientist-machine-learning-engineer')
-    (7, 'Ścieżka Data Scientist / Deep Learning Engineer', 'https://e-smartdata.teachable.com/p/sciezka-data-scientist-deep-learning-engineer')
-    (8, 'Ścieżka All-in-One', 'https://e-smartdata.teachable.com/p/sciezka-all-in-one')
+To the course_id column, add a FOREIGN KEY constraint referring to the id column of the "esmartdata_course" table with
+the ON DELETE CASCADE ON UPDATE CASCADE options.
+
+Commit the changes and close the database connection.
 """
 import sqlite3
 
-conn = sqlite3.connect("esmartdata.sqlite3")
+conn = sqlite3.connect("../esmartdata.sqlite3")
 cur = conn.cursor()
 
 cur.executescript('''DROP TABLE IF EXISTS "esmartdata_instructor";
@@ -95,12 +90,10 @@ VALUES
 
 print('Data entered successfully!')
 
-with open('Querys/load_esmartdata_course.sql', 'r', encoding='utf-8') as file:
+with open('../Query/load_esmartdata_course.sql', 'r', encoding='utf-8') as file:
     sql = file.read()
 
 cur.executescript(sql)
-
-print('Data successfully loaded!')
 
 cur.execute('''DROP INDEX IF EXISTS esmartdata_course_instructor_id_idx;''')
 cur.execute('''CREATE INDEX IF NOT EXISTS esmartdata_course_instructor_id_idx ON esmartdata_course('instructor_id');
@@ -128,18 +121,6 @@ CREATE TABLE IF NOT EXISTS "esmartdata_learningpath_courses" (
 );''')
 
 print("Table created successfully!")
-
-with open('Querys/load_esmartdata_learningpath.sql', 'r', encoding='utf-8') as file:
-    sql = file.read()
-
-cur.executescript(sql)
-
-print('Data successfully loaded!')
-
-cur.execute('''SELECT "id", "title", "url" FROM "esmartdata_learningpath;"''')
-
-for rows in cur.fetchall():
-    print(rows)
 
 conn.commit()
 conn.close()
