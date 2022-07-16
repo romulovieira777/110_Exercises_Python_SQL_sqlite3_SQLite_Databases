@@ -29,14 +29,17 @@ cur.executescript(load_data_sql)
 
 print("Data entered successfully!")
 
-cur.executescript('''SELECT COUNT(*) FROM app_user;
-                SELECT COUNT(*) FROM app_thread;
-                SELECT COUNT(*) FROM app_comment;
-                SELECT COUNT(*) FROM app_group;
-                SELECT COUNT(*) FROM app_group_user;''')
+user = cur.execute('''SELECT COUNT(*) FROM app_user;''').fetchall()[0]
+thread = cur.execute('''SELECT COUNT(*) FROM app_thread;''').fetchall()[0]
+comment = cur.execute('''SELECT COUNT(*) FROM app_comment;''').fetchall()[0]
+group = cur.execute('''SELECT COUNT(*) FROM app_group;''').fetchall()[0]
+group_user = cur.execute('''SELECT COUNT(*) FROM app_group_user;''').fetchall()[0]
 
-for row in cur.fetchall():
-    print(row)
+print(f'user: {user[0]}')
+print(f'thread: {thread[0]}')
+print(f'comment: {comment[0]}')
+print(f'group: {group[0]}')
+print(f'group_user: {group_user[0]}')
 
 conn.commit()
 conn.close()
