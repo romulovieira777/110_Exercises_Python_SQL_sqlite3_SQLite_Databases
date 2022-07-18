@@ -37,8 +37,7 @@ DROP INDEX IF EXISTS app_group_user_group_id_idx;
 CREATE INDEX app_group_user_group_id_idx ON app_group_user (group_id);
 
 DROP INDEX IF EXISTS app_group_user_user_id_idx;
-CREATE INDEX app_group_user_user_id_idx ON app_group_user (user_id)
-;
+CREATE INDEX app_group_user_user_id_idx ON app_group_user (user_id);
 
 DROP INDEX IF EXISTS app_group_user_group_id_user_idx_uniq;
 CREATE UNIQUE INDEX app_group_user_group_id_user_idx_uniq ON app_group_user (group_id, user_id);
