@@ -26,7 +26,18 @@ This query returns ten records from the table "app_comment". Using the pandas pa
 records and assign to the df variable.
 
 The content of the df variable:
-    id      body      created
+                                                  body              created
+    id
+    3         Herself stuff size inside probably personal.  2021-05-24 21:25:36
+    85   Painting follow rock whole check health resear...  2021-05-24 19:22:15
+    258  Popular husband less civil customer issue mout...  2021-05-24 16:39:17
+    118  Deep we who whole race study various house order.  2021-05-24 15:58:50
+    169           Would woman clear bad season close fast.  2021-05-24 13:27:35
+    79             Man smile nature let hotel development.  2021-05-24 12:08:57
+    207  Return win natural with read want recent sea a...  2021-05-24 10:29:49
+    143  Their capital peace PM face feeling cold part ...  2021-05-24 09:19:46
+    213  And area local thus raise yeah produce theory ...  2021-05-24 07:49:01
+    67   Truth series manager example game represent va...  2021-05-24 07:42:22
 """
 import sqlite3
 import pandas as pd
@@ -54,7 +65,7 @@ ORDER BY created DESC LIMIT 10;''')
 columns = [desc[0] for desc in cur.description]  # get column names
 df = pd.DataFrame(data=cur.fetchall(), columns=columns)  # fetchall() returns a list of tuples
 df = df.set_index('id')  # set the index to the id column
-print(id)  # print the DataFrame
+print(df)  # print the DataFrame
 
 conn.commit()  # commit the changes
 conn.close()  # close the connection to the database
