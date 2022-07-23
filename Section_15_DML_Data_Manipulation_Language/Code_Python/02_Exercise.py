@@ -21,11 +21,13 @@ conn = sqlite3.connect("app.db")  # connect to the database.
 cur = conn.cursor()  # create a cursor.
 
 with open('../Query/create_database.sql', 'r', encoding='utf-8') as file:
-    create_schema_sql = file.read()  # read the create_schema_sql file.
-cur.executescript(create_schema_sql)  # create database schema and insert data.
+    create_database_sql = file.read()  # read the create_schema_sql file.
+cur.executescript(create_database_sql)  # create database schema and insert data.
 
-cur.executescript('''DROP TABLE IF EXISTS app_membership;
-ALTER TABLE app_group_user RENAME TO app_membership;''')  # rename the table.
+cur.executescript('''
+    DROP TABLE IF EXISTS app_membership;
+    ALTER TABLE app_group_user RENAME TO app_membership;
+''')  # rename the table.
 
 print('Table successfully renamed!')
 

@@ -32,14 +32,14 @@ conn = sqlite3.connect("app.db")  # connect to the database.
 cur = conn.cursor()  # create a cursor.
 
 with open('../Query/create_database.sql', 'r', encoding='utf-8') as file:
-    create_schema_sql = file.read()
-cur.executescript(create_schema_sql)  # create database schema and insert data.
+    create_database_sql = file.read()
+cur.executescript(create_database_sql)  # create database schema and insert data.
 
-cur.execute('''ALTER TABLE app_user ADD COLUMN is_banned INTEGER DEFAULT 0''')  # add a column.
+cur.execute('''ALTER TABLE app_user ADD COLUMN is_banned INTEGER DEFAULT 0;''')  # add a column.
 
 print('New field successfully added!')
 
-cur.execute('''SELECT * FROM app_user LIMIT 10''')  # print the first ten records.
+cur.execute('''SELECT * FROM app_user LIMIT 10;''')  # print the first ten records.
 
 for row in cur.fetchall():
     print(row)
