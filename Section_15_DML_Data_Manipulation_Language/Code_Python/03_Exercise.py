@@ -35,7 +35,7 @@ conn = sqlite3.connect("app.db")  # connect to the database.
 cur = conn.cursor()  # create a cursor.
 
 with open('../Query/create_database.sql', 'r', encoding='utf-8') as file:
-    create_database_sql = file.read()  # read the create_schema_sql file.
+    create_database_sql = file.read()  # read the create_database_sql file.
 cur.executescript(create_database_sql)  # create database schema and insert data.
 
 cur.execute('''UPDATE app_user SET email = 'terry@esmartdata.org' WHERE id = 10;''')  # update the email address.
