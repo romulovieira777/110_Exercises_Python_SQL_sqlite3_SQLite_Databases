@@ -15,6 +15,7 @@
 - [Section 12 - Many-To-Many](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_12_Many_To_Many)
 - [Section 13 - Project - Forum Application](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_13_Project_Forum_Application)
 - [Section 14 - Forum Application](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_14_Forum_Application)
-- [Section 15 - DML - Data Manipulation Language]()
+- [Section 15 - DML - Data Manipulation Language](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_15_DML_Data_Manipulation_Language)
+- [Section 16 - CSV + Pandas]()
 
 Link to the course: [Udemy](https://www.udemy.com/course/exercises-python-sql-sqlite3-sqlite-databases/)
