@@ -1,0 +1,6 @@
+Intro
+
+Welcome to the csv + pandas section!
+
+
+In this short part, we will do some exercises combining SQLite databases with CSV files and the pandas package.
