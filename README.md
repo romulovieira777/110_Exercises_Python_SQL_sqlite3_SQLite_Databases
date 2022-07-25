@@ -17,6 +17,6 @@
 - [Section 14 - Forum Application](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_14_Forum_Application)
 - [Section 15 - DML - Data Manipulation Language](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_15_DML_Data_Manipulation_Language)
 - [Section 16 - CSV + Pandas](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_16_CSV_Pandas)
-- [Section 17 - SQLite3 + CSV]()
+- [Section 17 - SQLite3 + CSV](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_17_SQLite3_CSV)
 
 Link to the course: [Udemy](https://www.udemy.com/course/exercises-python-sql-sqlite3-sqlite-databases/)
