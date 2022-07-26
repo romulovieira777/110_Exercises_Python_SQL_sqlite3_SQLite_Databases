@@ -1,0 +1,13 @@
+Intro
+
+Welcome to the User-defined functions section!
+
+
+Sometimes the functions offered by SQLite are not enough for our needs.
+
+In this section, we will implement several user-defined functions that you can later use in SQL queries.
+
+
+More about functions in SQLite can be found here:
+
+    - https://sqlite.org/lang_corefunc.html
