@@ -21,5 +21,6 @@
 - [Section 18 - SQLite3 + Pandas](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_18_SQLite3_Pandas)
 - [Section 19 - User - Defined Functions](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_19_User_Defined_Functions)
 - [Section 20 - User - Defined Functions](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_20_User_Defined_Functions)
+- [Section 21 - Bonus](https://github.com/romulovieira777/110_Exercises_Python_SQL_sqlite3_SQLite_Databases/tree/main/Section_21_Bonus)
 
 Link to the course: [Udemy](https://www.udemy.com/course/exercises-python-sql-sqlite3-sqlite-databases/)
