@@ -18,24 +18,25 @@ Expected result:
 """
 import sqlite3
 
-conn = sqlite3.connect("app.db")
+conn = sqlite3.connect("app.db")    # Connect to the database
 cur = conn.cursor()
 
 with open('../Query/create_schema.sql', 'r', encoding='utf-8') as file:
     create_schema_sql = file.read()
-cur.executescript(create_schema_sql)
+cur.executescript(create_schema_sql)    # Create the database schema
 
-print("Table created successfully!")
+print("Table created successfully!")    # Print the result
 
 with open('../Query/load_data.sql', 'r', encoding='utf-8') as file:
     load_data_sql = file.read()
-cur.executescript(load_data_sql)
+cur.executescript(load_data_sql)    # Load the data into the database
 
-print("Data loaded successfully!")
+print("Data loaded successfully!")  # Print the result
 
-cur.execute('''SELECT first_name, last_name, cnt FROM top_10_users_view LIMIT 3;''')
+cur.execute('''SELECT first_name, last_name, cnt FROM top_10_users_view LIMIT 3;''')    # Execute the query
+
 for row in cur.fetchall():
-    print(row)
+    print(row)  # Print the result
 
-conn.commit()
-conn.close()
+conn.commit()   # Commit the changes
+conn.close()    # Close the connection

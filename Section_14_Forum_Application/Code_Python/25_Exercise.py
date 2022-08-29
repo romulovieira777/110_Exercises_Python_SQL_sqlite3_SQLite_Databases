@@ -49,13 +49,13 @@ with open('../Query/create_schema.sql', 'r', encoding='utf-8') as file:
     create_schema_sql = file.read()
 cur.executescript(create_schema_sql)  # create schema
 
-print("Table created successfully!")
+print("Table created successfully!") # print message
 
 with open('../Query/load_data.sql', 'r', encoding='utf-8') as file:
     load_data_sql = file.read()
 cur.executescript(load_data_sql)  # Load data into the database
 
-print("Data loaded successfully!")
+print("Data loaded successfully!") # print a message
 
 cur.execute('''SELECT id, body, created 
 FROM app_comment 
